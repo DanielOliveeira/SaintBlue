@@ -1,0 +1,331 @@
+/* Sidebar */
+.barraLateral {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    height: 100vh;
+    left: 0;
+    overflow: hidden;
+    padding: 20px 15px;
+    background-color: var(--color-barra-lateral);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, width 0.5s ease;
+    z-index: 50;
+    transform: translateX(0);
+}
+
+/* Quando a sidebar está minimizada */
+.barraLateral.miniBarraLateral {
+    transform: translateX(-100%);
+}
+
+/* Escondendo a sidebar */
+.barraLateral.hidden {
+    transform: translateX(-100%);
+}
+
+.barraLateral span {
+    width: 100%;
+    white-space: nowrap;
+    font-size: 18px;
+    text-align: left;
+    opacity: 1;
+    transition: opacity 0.6s ease, width 0.5s ease;
+}
+
+.barraLateral span.oculto {
+    opacity: 0;
+    width: 0;
+}
+
+/* Nome da página */
+.barraLateral .nomePagina {
+    width: 100%;
+    height: 45px;
+    color: var(--color-texto);
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 4px;
+}
+
+.barraLateral .nomePagina img {
+    min-width: 4rem;
+    height: 4rem;
+    display: flex;
+    margin-left: 0.5rem;
+    margin-top: 0.6rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.barraLateral .nomePagina span {
+    font-size: 25px;
+    margin-left: 5px;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+.barraLateral .nomePagina .txtLogo {
+    margin-left: 3.2rem;
+    font-size: 2rem;
+}
+
+.barraLateral .nomePagina span.oculto {
+    opacity: 0;
+}
+
+/* Menu de Navegação */
+.barraLateral .navegacao {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.barraLateral .navegacao li {
+    list-style: none;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.barraLateral .navegacao a {
+    width: 98%;
+    height: 50px;
+    display: flex;
+    padding-left: 13px;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 12px;
+    background-color: var(--color-barra-lateral);
+    color: var(--color-texto-menu);
+}
+
+.barraLateral .navegacao a:hover {
+    background: var(--color-menu-houver);
+    color: var(--color-menu-houver-texto);
+}
+
+.barraLateral .navegacao i {
+    min-width: 40px;
+    font-size: 22px;
+}
+
+/* Menu de Navegação = SAIR */
+.barraLateral .sair {
+    height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.barraLateral .sair li {
+    list-style: none;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.barraLateral .sair a {
+    width: 98%;
+    height: 40px;
+    display: flex;
+    padding-left: 13px;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 12px;
+    background-color: var(--color-barra-lateral);
+    color: var(--color-texto-menu);
+}
+
+.barraLateral .sair a:hover {
+    background: var(--color-menu-houver);
+    color: var(--color-menu-houver-texto);
+}
+
+.barraLateral .sair i {
+    min-width: 40px;
+    font-size: 22px;
+}
+
+/* Estilo quando o botão estiver ativo */
+.barraLateral .navegacao a.active {
+    background: var(--color-menu-houver);
+    color: var(--color-menu-houver-texto);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Menu de Navegação = Linha */
+.barraLateral .linha {
+    width: 100%;
+    height: 2px;
+    border-radius: 12px;
+    margin-top: 10px;
+    background-color: var(--color-linha);
+}
+
+/* Menu de Navegação = Modo Dark */
+.barraLateral .modoEscuro {
+    width: 100%;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.barraLateral .modoEscuro * {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.barraLateral .modoEscuro .info {
+    width: 150px;
+    height: 45px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: var(--color-texto-menu);
+}
+
+.barraLateral .modoEscuro .infoTxt{
+    font-size: 1rem;
+    margin-left: 5px;
+    padding-left: 7px;
+}
+
+.barraLateral .modoEscuro i {
+    transition: opacity 0.1s ease-in-out;
+    width: 50px;
+    padding-left: 15px;
+    font-size: 22px;
+}
+
+/* Menu de Navegação = Switch */
+.barraLateral .modoEscuro .switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.barraLateral .modoEscuro .base {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 35px;
+    height: 20px;
+    background-color: var(--color-switch-base);
+    border-radius: 50px;
+}
+
+.barraLateral .modoEscuro .circulo {
+    position: absolute;
+    width: 18px;
+    height: 90%;
+    background-color: var(--color-switch-circulo);
+    border-radius: 50%;
+    left: 2px;
+    transition: left 0.5s ease;
+}
+
+.barraLateral .modoEscuro .circulo.prendido {
+    left: 15px;
+}
+
+
+/* Menu de Navegação = Usuario */
+.barraLateral .usuario {
+    width: 100%;
+    display: flex;
+}
+
+.barraLateral .usuario img {
+    width: 50px;
+    min-width: 50px;
+    border-radius: 10px;
+}
+
+.barraLateral .usuario .infoUsuario {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-texto);
+    overflow: hidden;
+}
+
+.barraLateral .usuario .nome {
+    font-size: 15px;
+    font-weight: 600;
+    padding-left: 8px;
+}
+
+.barraLateral .usuario i {
+    font-size: 20px;
+}
+
+.toggleSidebarBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-menu-houver);
+    color: rgb(45, 44, 44);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease, transform 0.5s;
+}
+
+.toggleSidebarBtn:hover {
+    background-color: var(--color-main-fundo);
+    color: rgb(45, 44, 44);
+    transform: scale(1.1);
+}
+
+.toggleSidebarBtn i {
+    font-size: 28px;
+    font-weight: 900;
+}
+
+
+.openPopupBtn {
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.openPopupBtn:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px){
+
+    .menu{
+        display: flex;
+        background-color: var(--color-boton);
+    }
+    .menu i:nth-child(2){
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .toggleSidebarBtn {
+        display: none;
+    }
+}

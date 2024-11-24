@@ -1,0 +1,312 @@
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.popupContent {
+    width: 350px;
+    height: 650px;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.closePopup {
+    padding: 5px;
+    top: 15px;
+    right: 15px;
+    font-size: 35px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    position: absolute;
+    }
+
+.popupHeader {
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.popupInputFt {
+    display: none;
+  }
+
+.openPopupBtn {
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.openPopupBtn:hover {
+    transform: scale(1.1);
+}
+
+.popupHeader {
+    background: var(--color-main-fundo);
+    padding: 17px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    color: white;
+}
+
+.perfil {
+    background-color: #eee;
+    padding: 20px; 
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btnTxt:hover{
+    color: var(--color-main-texto);
+    transform: scale(1.1);
+}
+.popupActionBtn:hover{
+    background-color: rgb(188, 187, 187);
+    color: var(--color-main-texto);
+    transform: scale(1.1);
+}
+
+.popupActionBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 13px auto;
+    padding: 20px 30px;
+}
+
+.alterarFoto {
+    text-align: center;
+    font-size: 18px;
+    color: #40706b;
+    cursor: pointer;
+}
+
+.informacoes .infoH2 {
+    font-size: 10px;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.informacoes input {
+    width: 100%;
+    height: 1.7rem;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid #40706b;
+    background-color: transparent;
+    font-size: 14px;
+    color: #333;
+}
+.informacoes input:focus{
+    border: none;
+    transition: border 0;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 90px;
+    margin: auto;
+    color: white;
+    border-radius: 10px;
+    font-size: 28px;
+}
+
+.btnTxt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+
+.btn button {
+    padding: 18px 20px;
+    background-color: var(--color-menu-houver);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn button:hover {
+    background-color: var(--color-menu-houver); 
+}
+
+/* Botão de fechar o pop-up */
+.photoUpload {
+    width: 10rem;
+    height: 9rem;
+    border: 0.1rem solid #000000;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer;
+    margin: 0 auto; 
+    margin-top: 1rem;
+    color: #000000;
+    font-weight: bold;
+    text-align: center; 
+    padding: 2rem; 
+    box-sizing: border-box; 
+    flex-direction: column;
+    position: relative;
+    top: -1rem;
+}
+
+#productImage {
+    display: none; 
+}
+@media (min-width: 1072px){
+    .perfil{
+        padding: 5px;
+    }
+    .perfil .photoUpload{
+        margin-left: 75px;
+    }
+    .photoUpload {
+        width: 12rem;
+        height: 12rem;
+        border: 0.1rem solid #000000;
+        border-radius: 2rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        margin-right: 44rem;
+        cursor: pointer; 
+        color: #000000;
+        font-weight: bold;
+        text-align: center; 
+        padding: 0.2rem; 
+        box-sizing: border-box; 
+        flex-direction: column; 
+        background-color: #ffffff;
+        position: relative;
+        top: 0rem;
+    }
+
+    .photoUpload:hover {
+        background-color: #e0e0e0; 
+    }
+}
+@media (max-width: 1072px){
+    .perfil .photoUpload{
+        background-color: #fff; 
+    }
+}
+
+/* Estilos para o pop-up em dispositivos tablet */
+@media (min-width: 768px) and (max-width: 1072px) {
+    .popupContent {
+        width: 480px;
+        height: 780px;
+    }
+
+    .popupHeader {
+        padding: 20px;
+        font-size: 22px;
+    }
+
+    .form {
+        gap: 20px;
+    }
+
+    .btn {
+        width: 250px;
+        height: 100px; 
+    }
+
+    .btn button {
+        padding: 22px 25px;
+        font-size: 20px;
+        width: 250px;
+        height: 70px; 
+    }
+
+    .photoUpload {
+        width: 12rem;
+        height: 12rem;
+        margin-top: 1rem;
+    }
+
+    .informacoes .input {
+        font-size: 16px;
+    }
+    
+}
+
+
+@media (max-width: 768px) {
+    .popupContent {
+        width: 330px;
+        height: 600px;
+    }
+
+    .popupHeader {
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .form {
+        gap: 15px;
+    }
+
+    .btn {
+        width: 200px;
+        height: 60px;
+    }
+
+    .btn button {
+        padding: 15px 20px;
+        font-size: 16px;
+        width: 200px;
+        height: 50px;
+    }
+
+    .photoUpload {
+        width: 8rem;
+        height: 8rem;
+        margin-top: 1rem;
+    }
+
+    .informacoes .input {
+        font-size: 14px;
+    }
+
+    .closePopup {
+        top: 10px;
+        right: 18px;
+        font-size: 30px;
+        padding: 5px;
+    }
+}
